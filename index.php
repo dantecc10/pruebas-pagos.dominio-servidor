@@ -15,7 +15,8 @@
         paypal.Buttons({
             style: {
                 color: 'blue',
-                shape: 'pill'
+                shape: 'pill',
+                label: 'pay'
             }
         }).render('#paypal-button-container');
     </script>
