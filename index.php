@@ -26,6 +26,9 @@
                         }
                     }]
                 });
+            },
+            onCancel: function(data) {
+                alert("Pago cancelado");
             }
         }).render('#paypal-button-container');
     </script>
