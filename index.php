@@ -12,7 +12,7 @@
 <body>
     <div id="paypal-button-container"></div>
     <script>
-        paypal.buttons().render('#paypal-button.container');
+        paypal.Buttons().render('#paypal-button.container');
     </script>
 </body>
 
