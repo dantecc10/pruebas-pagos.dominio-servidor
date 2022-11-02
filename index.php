@@ -29,6 +29,7 @@
             },
             onCancel: function(data) {
                 alert("Pago cancelado");
+                console.log(data);
             }
         }).render('#paypal-button-container');
     </script>
