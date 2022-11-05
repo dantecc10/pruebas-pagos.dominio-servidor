@@ -27,6 +27,11 @@
                     }]
                 });
             },
+            onApprove: function(data, actions) {
+                actions.order.capture().then(function(detalles) {
+                    console.log(detalles);
+                });
+            },
             onCancel: function(data) {
                 alert("Pago cancelado");
                 console.log(data);
