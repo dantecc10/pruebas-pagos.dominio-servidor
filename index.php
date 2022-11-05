@@ -32,6 +32,7 @@
                             <a href="#" class="nav-link">Contacto</a>
                         </li>
                     </ul>
+                    <a href="carrito.php" class="btn btn-primary">Carrito</a>
                 </div>
             </div>
         </div>
