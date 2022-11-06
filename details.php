@@ -24,6 +24,8 @@ if ($id == '' | $token == '') {
             $precio = $row['precio'];
             $nombre = $row['nombre'];
             $descripción = $row['descripción'];
+            $descuento = $row['descuento'];
+            $precio_desc = (($precio * $descuento) / 100);
         }
     } else {
         echo 'Error al procesar la petición.';
