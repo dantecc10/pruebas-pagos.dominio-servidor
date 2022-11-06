@@ -71,7 +71,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                                         $row['precio']; ?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <a href="" class="btn btn-primary">Detalles</a>
+                                        <a href="details.php?id=<?php echo $row['id']; ?>&token=<?php echo hash_hmac('sha1', $row['id'], KEY_TOKEN); ?>" class="btn btn-primary">Detalles</a>
                                     </div>
                                     <a href="" class="btn btn-success">Agregar</a>
                                 </div>
