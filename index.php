@@ -43,16 +43,15 @@
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 <div class="col">
                     <div class="card shadow-sm">
-                        <img src="">
+                        <img src="images/productos/1/principal.jpg">
                         <div class="card-body">
                             <h5 class="card-title">Zapatos color café</h5>
                             <p class="card-text">$ 599.00</p>
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <div class="btn-group">
                                     <a href="" class="btn btn-primary">Detalles</a>
                                 </div>
-                                <a href="" class="btn btn-succes">Agregar</a>
+                                <a href="" class="btn btn-success">Agregar</a>
                             </div>
                         </div>
                     </div>
