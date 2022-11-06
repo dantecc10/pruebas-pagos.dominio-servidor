@@ -10,6 +10,17 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
 if ($id == '' | $token == '') {
     echo 'Error al procesar la petición.';
     exit;
+} else {
+    $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
+
+    if ($token == $token_tmp) {
+        $sql = $con->prepare("SELECT count(id) FROM productos WHERE activo=1");
+        $sql->execute();
+        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        echo 'Error al procesar la petición.';
+        exit;
+    }
 }
 
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
