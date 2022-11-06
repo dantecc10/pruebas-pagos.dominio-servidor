@@ -49,38 +49,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 align-items-center">
-                <?php
-                foreach ($resultado as $row) {
-                ?>
-                    <div class="col align-middle">
-                        <div class="card shadow-sm">
-                            <?php
-                            $id = $row['id'];
-                            $imagen = "images/productos/$id/principal.jpg";
-
-                            if (!file_exists($imagen)) {
-                                $imagen = "images/no-photo.jpg";
-                            }
-                            ?>
-                            <img src="<?php echo $imagen; ?>">
-                            <div class="card-body">
-                                <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
-                                <p class="card-text">$ <?php echo number_format($row['precio'], 2, '.', ',');
-                                                        $row['precio']; ?></p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="btn-group">
-                                        <a href="" class="btn btn-primary">Detalles</a>
-                                    </div>
-                                    <a href="" class="btn btn-success">Agregar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <?php
-                }
-                ?>
-            </div>
         </div>
     </main>
 
