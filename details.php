@@ -26,6 +26,19 @@ if ($id == '' | $token == '') {
             $descripción = $row['descripción'];
             $descuento = $row['descuento'];
             $precio_desc = (($precio * $descuento) / 100);
+            $dir_images = 'images/productos/' . $id . '/';
+
+            $rutaImg = $dir_images . 'principal.jpg';
+
+            if (!file_exists($rutaImg)) {
+                $rutaImg = 'images/no-photo.jpg';
+            }
+            $images = array();
+            $dir = dir($dir_images);
+
+            while (($archivo = $dir->read()) != false) {
+                # code...
+            }
         }
     } else {
         echo 'Error al procesar la petición.';
