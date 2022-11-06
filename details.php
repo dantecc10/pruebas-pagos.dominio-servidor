@@ -121,7 +121,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                         </button>
                     </div>
 
-                    <img src="images/productos/<?php echo $row['id']; ?>/principal.jpg">
+                    <!--<img src="images/productos/<?php echo $row['id']; ?>/principal.jpg">-->
                 </div>
                 <div class="col-md-6 order-md-2">
                     <h2><?php echo $nombre; ?></h2>
