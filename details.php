@@ -4,7 +4,13 @@ require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$id = $_GET['id'];
+$id = isset($_GET['id']) ? $_GET['id'] : '';
+$token = isset($_GET['token']) ? $_GET['token'] : '';
+
+if ($id == '' | $token == '') {
+    echo 'Error al procesar la petición.';
+    exit;
+}
 
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
