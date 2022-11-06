@@ -47,11 +47,13 @@
                         <div class="card-body">
                             <h5 class="card-title">Zapatos color café</h5>
                             <p class="card-text">$ 599.00</p>
+                            <div class="d-flex justify-content-between align-items-center">
 
-                            <div class="btn-group">
-
+                                <div class="btn-group">
+                                    <a href="" class="btn-primary">Detalles</a>
+                                    <a href="" class="btn-succes">Agregar</a>
+                                </div>
                             </div>
-                            <small class="text-muted">9 mins</small>
                         </div>
                     </div>
                 </div>
