@@ -41,6 +41,7 @@ if ($id == '' | $token == '') {
                     $imágenes[] = $dir_images . $archivo;
                 }
             }
+            $dir->close();
         }
     } else {
         echo 'Error al procesar la petición.';
