@@ -14,9 +14,17 @@ if ($id == '' | $token == '') {
     $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
 
     if ($token == $token_tmp) {
-        $sql = $con->prepare("SELECT count(id) FROM productos WHERE activo=1");
-        $sql->execute();
-        $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+        $sql = $con->prepare("SELECT count(id) FROM productos WHERE id=? AND activo = 1 LIMIT 1");
+        $sql->execute([$id]);
+
+        if ($sql->fetchColumn() > 0) {
+            $sql = $con->prepare("SELECT * FROM productos WHERE id=? AND activo = 1");
+            $sql->execute([$id]);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            $precio = $row['precio'];
+            $nombre = $row['nombre'];
+            $descripción = $row['descripción'];
+        }
     } else {
         echo 'Error al procesar la petición.';
         exit;
