@@ -83,7 +83,8 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <img src="images/productos/1/principal.jpg">
                 </div>
                 <div class="col-md-6 order-md-2">
-
+                    <h2><?php echo $nombre; ?></h2>
+                    <h2>$ <?php echo MONEDA . $precio; ?></h2>
                 </div>
 
             </div>
