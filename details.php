@@ -80,7 +80,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-md-1">
-                    <img src="">
+                    <img src="images/productos/1/principal.jpg">
                 </div>
                 <div class="col-md-6 order-md-2">
 
