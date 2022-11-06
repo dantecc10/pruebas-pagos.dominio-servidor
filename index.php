@@ -78,7 +78,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                     </div>
                 <?php
-
                 }
                 ?>
             </div>
