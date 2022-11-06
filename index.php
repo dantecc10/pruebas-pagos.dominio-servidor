@@ -64,7 +64,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                                 $imagen = "images/no-photo.jpg";
                             }
                             ?>
-                            <img src="<?php echo $$imagen; ?>">
+                            <img src="<?php echo $imagen; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
                                 <p class="card-text">$ <?php echo $row['precio']; ?></p>
