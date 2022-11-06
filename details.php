@@ -102,9 +102,14 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                     <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img src="..." class="d-block w-100" alt="...">
-                                <img src="images/productos/<?php echo $row['id']; ?>/principal.jpg" class="d-block w-100" alt="principal-producto">
+                                <img src="<?php echo $rutaImg; ?>" class="d-block w-100" alt="principal-producto">
                             </div>
+                            <?php
+                            foreach ($imagenes as $img) { ?>
+                                <div class="carousel-item">
+                                    <img src="<?php echo $img; ?>" class="d-block w-100" alt="principal-producto">
+                                </div>
+                            <?php } ?>
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselImages" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
