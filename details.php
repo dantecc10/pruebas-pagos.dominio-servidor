@@ -78,6 +78,15 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <div class="container">
+            <div class="row">
+                <div class="col-md-6 order-md-1">
+                    <img src="">
+                </div>
+                <div class="col-md-6 order-md-2">
+
+                </div>
+
+            </div>
         </div>
     </main>
 
