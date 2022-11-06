@@ -52,7 +52,6 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 align-items-center">
                 <?php
                 foreach ($resultado as $row) {
-
                 ?>
                     <div class="col align-middle">
                         <div class="card shadow-sm">
