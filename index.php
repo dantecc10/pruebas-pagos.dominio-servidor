@@ -51,8 +51,8 @@
 
                                 <div class="btn-group">
                                     <a href="" class="btn btn-primary">Detalles</a>
-                                    <a href="" class="btn btn-succes">Agregar</a>
                                 </div>
+                                <a href="" class="btn btn-succes">Agregar</a>
                             </div>
                         </div>
                     </div>
