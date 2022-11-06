@@ -6,7 +6,7 @@ class Database
     private $database = "tienda_online";
     private $username = "tienda_online";
     private $password = "tienda_online";
-    private $charset = "urf8";
+    private $charset = "utf8";
 
     function conectar()
     {
