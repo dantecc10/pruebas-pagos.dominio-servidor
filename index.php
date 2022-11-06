@@ -54,7 +54,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($resultado as $row) {
 
                 ?>
-                    <div class="col">
+                    <div class="col align-middle">
                         <div class="card shadow-sm">
                             <?php
                             $id = $row['id'];
