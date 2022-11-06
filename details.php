@@ -37,7 +37,9 @@ if ($id == '' | $token == '') {
             $dir = dir($dir_images);
 
             while (($archivo = $dir->read()) != false) {
-                # code...
+                if ($archivo != 'principal.jpg' && (strpos($archivo, 'jpg') || (strpos($archivo, 'jpeg')) || (strpos($archivo, 'png')))) {
+                    $images = $dir_images . $archivo;
+                }
             }
         }
     } else {
