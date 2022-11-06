@@ -50,8 +50,8 @@
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <div class="btn-group">
-                                    <a href="" class="btn-primary">Detalles</a>
-                                    <a href="" class="btn-succes">Agregar</a>
+                                    <a href="" class="btn btn-primary">Detalles</a>
+                                    <a href="" class="btn btn-succes">Agregar</a>
                                 </div>
                             </div>
                         </div>
