@@ -1,3 +1,8 @@
+<?php
+require 'config/database.php';
+$db = new Database();
+$con = $db->conectar();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
