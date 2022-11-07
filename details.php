@@ -125,6 +125,18 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="col-md-6 order-md-2">
                     <h2><?php echo $nombre; ?></h2>
+                    <?php
+                    if ($descuento > 0) { ?>
+                        <p><del><?php echo MONEDA . number_format($precio, 2, '.', ','); ?></del></p>
+                        <h2>
+                            <?php echo MONEDA . number_format($precio_tmp, 2, '.', ','); ?>
+                            <small class="text-succes"><?php echo $descuento; ?>% de descuento</small>
+                        </h2>
+                    <?php } else { ?>
+                        <h2>
+                            <?php echo MONEDA . number_format($precio, 2, '.', ','); ?>
+                        </h2>
+                    <?php } ?>
                     <h2><?php echo MONEDA .  number_format($precio, 2, '.', ','); ?></h2>
                     <p class="lead">
                         <?php echo $descripción; ?>
