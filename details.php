@@ -130,7 +130,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                         <p><del><?php echo MONEDA . number_format($precio, 2, '.', ','); ?></del></p>
                         <h2>
                             <?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?>
-                            <small class="text-succes"><?php echo $descuento; ?>% de descuento</small>
+                            <small class="text-success"><?php echo $descuento; ?>% descuento</small>
                         </h2>
                     <?php } else { ?>
                         <h2>
