@@ -153,6 +153,20 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         </div>
     </main>
 
+    <script>
+        function addProducto(id, token) {
+            let url = 'clases/carrito.php';
+            let formData = new FormData();
+            formData.append('id', id);
+            formData.append('token', token);
+            fetch(url, {
+                method: 'POST',
+                body: formData,
+                mode: 'cros'
+            }).then(response => response.json())
+        }
+    </script>
+
 </body>
 
 </html>
