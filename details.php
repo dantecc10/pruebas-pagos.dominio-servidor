@@ -137,7 +137,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                             <?php echo MONEDA . number_format($precio, 2, '.', ','); ?>
                         </h2>
                     <?php } ?>
-                    <h2><?php echo MONEDA .  number_format($precio, 2, '.', ','); ?></h2>
+
                     <p class="lead">
                         <?php echo $descripción; ?>
                     </p>
