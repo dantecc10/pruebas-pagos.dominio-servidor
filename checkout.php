@@ -6,13 +6,13 @@ $db = new Database();
 $con = $db->conectar();
 
 $producto = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['producto'] : null;
+print_r($_SESSION);
 
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 #session_destroy();
-#print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
