@@ -5,7 +5,7 @@ require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$productos = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['producto'] : null;
+$productos = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['productos'] : null;
 print_r($_SESSION);
 $lista_carrito = array();
 if ($productos != null) {
