@@ -90,20 +90,30 @@ if ($productos != null) {
                                 $subtotal = $cantidad * $precio_desc;
                                 $total += $subtotal;
                             }
-                        }
-
                         ?>
 
-                        <tr>
-                            <td><?php echo $nombre; ?></td>
-                            <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
-                            <td><input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange=""></td>
-                            <td><?php ?></td>
-                            <td><?php ?></td>
-                            <td><?php ?></td>
-                            <td><?php ?></td>
-                        </tr>
-
+                            <tr>
+                                <td><?php echo $nombre; ?></td>
+                                <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
+                                <td>
+                                    <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="">
+                                </td>
+                                <td>
+                                    <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
+                                        <?php
+                                        echo MONEDA . number_format($subtotal, 2, '.', ',');
+                                        ?>
+                                    </div>
+                                </td>
+                                <td>
+                                    <a href="#" id="eliminar" class="btn btnwarning btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="eliminaModal">
+                                        Eliminar
+                                    </a>
+                                </td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
                     </tbody>
                 </table>
             </div>
