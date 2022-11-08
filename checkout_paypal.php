@@ -6,29 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prueba <?php
-require 'config/config.php';
-require 'config/database.php';
-$db = new Database();
-$con = $db->conectar();
-$sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
-$sql->execute();
-$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
+                    require 'config/config.php';
+                    require 'config/database.php';
+                    $db = new Database();
+                    $con = $db->conectar();
+                    $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
+                    $sql->execute();
+                    $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-#session_destroy();
-print_r($_SESSION);
-?>
-<!DOCTYPE html>
-<html lang="es-MX">
+                    #session_destroy();
+                    print_r($_SESSION);
+                    ?>
+        <!DOCTYPE html>
+        <html lang="es-MX">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda Online</title>
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="css/estilos.css" rel="stylesheet">
-</head>
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Tienda Online</title>
+            <!-- CSS only -->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+            <link href="css/estilos.css" rel="stylesheet">
+        </head>
 
 <body>
     <!-- JavaScript Bundle with Popper -->
@@ -120,7 +120,7 @@ print_r($_SESSION);
 </body>
 
 </html>de pagos</title>
-    <script src="https://www.paypal.com/sdk/js?client-id=AZfUU5uy4JNNgtbnwTOkZeicL8gO3f9GOZ03iRE1FKDVMeqB3DcUQ7Rm2QvNnF9rRiBNySF82QOEIGhB&currency=MXN"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=AZfUU5uy4JNNgtbnwTOkZeicL8gO3f9GOZ03iRE1FKDVMeqB3DcUQ7Rm2QvNnF9rRiBNySF82QOEIGhB&currency=MXN"></script>
 </head>
 
 <body>
