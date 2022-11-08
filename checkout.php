@@ -75,28 +75,28 @@ if ($productos != null) {
                             <th></th>
                         </tr>
                     </thead>
+
                     <tbody>
                         <?php
                         if ($lista_carrito == null) {
                             echo '<tr><td colspan="5" class="text-center"><b>Lista vacía</b></td></tr>';
                         } else {
                             $total = 0;
-                            foreach ($lista_carrito as $producto => $value) {
-                                $_id = $id['id'];
-                                $nombre = $nombre['nombre'];
-                                $precio = $precio['precio'];
-                                $descuento = $descuento['descuento'];
+                            foreach ($lista_carrito as $producto) {
+                                $_id = $producto['id'];
+                                $nombre = $producto['nombre'];
+                                $precio = $producto['precio'];
+                                $descuento = $producto['descuento'];
                                 $precio_desc = $precio - (($precio * $descuento) / 100);
                                 $subtotal = $cantidad * $precio_desc;
                                 $total += $subtotal;
-
                         ?>
 
                                 <tr>
                                     <td><?php echo $nombre; ?></td>
                                     <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
                                     <td>
-                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="">
+                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="">
                                     </td>
                                     <td>
                                         <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
@@ -106,7 +106,7 @@ if ($productos != null) {
                                         </div>
                                     </td>
                                     <td>
-                                        <a href="#" id="eliminar" class="btn btnwarning btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="eliminaModal">
+                                        <a href="#" id="eliminar" class="btn btn-warning btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="eliminaModal">
                                             Eliminar
                                         </a>
                                     </td>
