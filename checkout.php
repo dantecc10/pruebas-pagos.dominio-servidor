@@ -87,6 +87,7 @@ if ($productos != null) {
                                 $nombre = $producto['nombre'];
                                 $precio = $producto['precio'];
                                 $descuento = $producto['descuento'];
+                                $cantidad = $producto['cantidad'];
                                 $precio_desc = $precio - (($precio * $descuento) / 100);
                                 $subtotal = $cantidad * $precio_desc;
                                 $total += $subtotal;
