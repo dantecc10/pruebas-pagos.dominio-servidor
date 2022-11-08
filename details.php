@@ -164,7 +164,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             fetch(url, {
                     method: 'POST',
                     body: formData,
-                    mode: 'cors'
+                    mode: 'cros'
                 }).then(response => response.json())
                 .then(data => {
                     if (data.ok) {
