@@ -75,6 +75,36 @@ if ($productos != null) {
                             <th></th>
                         </tr>
                     </thead>
+                    <tbody>
+                        <?php
+                        if ($lista_carrito == null) {
+                            echo '<tr><td colspan="5" class="text-center"><b>Lista vacía</b></td></tr>';
+                        } else {
+                            $total = 0;
+                            foreach ($lista_carrito as $producto => $value) {
+                                $_id = $id['id'];
+                                $nombre = $nombre['nombre'];
+                                $precio = $precio['precio'];
+                                $descuento = $descuento['descuento'];
+                                $precio_desc = $precio - (($precio * $descuento) / 100);
+                                $subtotal = $cantidad * $precio_desc;
+                                $total += $subtotal;
+                            }
+                        }
+
+                        ?>
+
+                        <tr>
+                            <td><?php echo $nombre; ?></td>
+                            <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
+                            <td><input type="number" min="1" max="10" step="1" value="<?php echo $cantidad; ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange=""></td>
+                            <td><?php ?></td>
+                            <td><?php ?></td>
+                            <td><?php ?></td>
+                            <td><?php ?></td>
+                        </tr>
+
+                    </tbody>
                 </table>
             </div>
         </div>
