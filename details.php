@@ -168,7 +168,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 }).then(response => response.json())
                 .then(data => {
                     if (data.ok) {
-                        let elemento = document.getElementById("num_cart");
+                        let elemento = document.getElementById("num_cart")
                         elemento.innerHTML = data.número;
                     } else {
 
