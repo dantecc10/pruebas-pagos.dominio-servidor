@@ -5,12 +5,17 @@ require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$producto = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['producto'] : null;
+$productos = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['producto'] : null;
 print_r($_SESSION);
+$lista_carrito = array();
+if ($productos != null) {
+    foreach ($productos as $clave => $cantidad) {
+        $sql = $con->prepare("SELECT id, nombre, precio, descuento, $cantidad AS cantidad FROM productos WHERE id=? AND activo=1");
+        $sql->execute([$clave]);
+        $lista_carrito[] = $sql->fetch(PDO::FETCH_ASSOC);
+    }
+}
 
-$sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
-$sql->execute();
-$resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 #session_destroy();
 ?>
@@ -59,7 +64,19 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
     <main>
         <div class="container">
-
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
         </div>
     </main>
     <script>
