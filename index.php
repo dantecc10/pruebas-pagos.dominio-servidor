@@ -11,7 +11,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 print_r($_SESSION);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-MX">
 
 <head>
     <meta charset="UTF-8">
