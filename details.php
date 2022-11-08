@@ -169,9 +169,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                 .then(data => {
                     if (data.ok) {
                         let elemento = document.getElementById("num_cart")
-                        elemento.innerHTML = data.número;
-                    } else {
-
+                        elemento.innerHTML = data.número
                     }
                 })
         }
