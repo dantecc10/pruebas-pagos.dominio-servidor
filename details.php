@@ -90,7 +90,9 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
                             <a href="#" class="nav-link">Contacto</a>
                         </li>
                     </ul>
-                    <a href="carrito.php" class="btn btn-primary">Carrito</a>
+                    <a href="carrito.php" class="btn btn-primary">Carritos
+                        <span id="num_cart" class="badge bg-secondary">5</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -160,10 +162,18 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             formData.append('id', id);
             formData.append('token', token);
             fetch(url, {
-                method: 'POST',
-                body: formData,
-                mode: 'cros'
-            }).then(response => response.json())
+                    method: 'POST',
+                    body: formData,
+                    mode: 'cros'
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        let elemento = document.getElementById("num_cart");
+                        elemento.innerHTML = data.número;
+                    } else {
+
+                    }
+                })
         }
     </script>
 

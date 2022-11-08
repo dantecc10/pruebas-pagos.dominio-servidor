@@ -21,3 +21,4 @@ if (isset($_POST['id'])) {
 } else {
     $datos['ok'] = false;
 }
+echo json_encode($datos);
