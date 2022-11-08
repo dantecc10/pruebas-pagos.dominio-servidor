@@ -75,7 +75,7 @@ print_r($_SESSION);
                                     <div class="btn-group">
                                         <a href="details.php?id=<?php echo $row['id']; ?>&token=<?php echo hash_hmac('sha1', $row['id'], KEY_TOKEN); ?>" class="btn btn-primary">Detalles</a>
                                     </div>
-                                    <button class="btn btn-outline-primary" type="button" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>')">Agregar al carrito</button>
+                                    <button class="btn btn-outline-primary" type="button" onclick="addProducto(<?php echo $row['id']; ?>, '<?php echo hash_hmac('sha1', $row['id'], KEY_TOKEN); ?>')">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,25 @@ print_r($_SESSION);
             </div>
         </div>
     </main>
-
+    <script>
+        function addProducto(id, token) {
+            let url = 'clases/carrito.php'
+            let formData = new FormData()
+            formData.append('id', id)
+            formData.append('token', token)
+            fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'cors'
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        let elemento = document.getElementById("num_cart")
+                        elemento.innerHTML = data.número
+                    }
+                })
+        }
+    </script>
 </body>
 
 </html>
