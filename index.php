@@ -75,7 +75,7 @@ print_r($_SESSION);
                                     <div class="btn-group">
                                         <a href="details.php?id=<?php echo $row['id']; ?>&token=<?php echo hash_hmac('sha1', $row['id'], KEY_TOKEN); ?>" class="btn btn-primary">Detalles</a>
                                     </div>
-                                    <a href="" class="btn btn-success">Agregar</a>
+                                    <button class="btn btn-outline-primary" type="button" onclick="addProducto(<?php echo $id; ?>, '<?php echo $token_tmp; ?>')">Agregar al carrito</button>
                                 </div>
                             </div>
                         </div>
