@@ -7,7 +7,7 @@ $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-session_destroy();
+#session_destroy();
 print_r($_SESSION);
 ?>
 <!DOCTYPE html>
@@ -70,8 +70,10 @@ print_r($_SESSION);
                             <img src="<?php echo $imagen; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
-                                <p class="card-text">$ <?php echo number_format($row['precio'], 2, '.', ',');
-                                                        $row['precio']; ?></p>
+                                <p class="card-text">$
+                                    <?php echo number_format($row['precio'], 2, '.', ',');
+                                    $row['precio']; ?>
+                                </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="details.php?id=<?php echo $row['id']; ?>&token=<?php echo hash_hmac('sha1', $row['id'], KEY_TOKEN); ?>" class="btn btn-primary">Detalles</a>
