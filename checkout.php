@@ -135,7 +135,7 @@ if ($productos != null) {
         </div>
     </main>
     <script>
-        function addProducto(cantidad, id) {
+        function actualizaCantidad(cantidad, id) {
             let url = 'clases/actualizar_carrito.php'
             let formData = new FormData()
             formData.append('id', id)
