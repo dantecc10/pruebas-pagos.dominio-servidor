@@ -8,6 +8,7 @@ if (isset($_POST['action'])) {
 
     if ($action == 'agregar') {
         $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
+        agregar($id, $cantidad);
     }
 }
 
@@ -17,6 +18,20 @@ function agregar($id, $cantidad)
     if ($id > 0 && $cantidad > 0 && is_numeric(($cantidad))) {
         if (isset($_SESSION['carrito']['productos'][$id])) {
             $_SESSION['carrito']['productos'][$id] = $cantidad;
+
+            $db = new Database();
+            $con = $db->conectar();
+
+            $sql = $con->prepare("SELECT precio, descuento FROM productos WHERE id=? AND activo = 1");
+            $sql->execute([$id]);
+            $row = $sql->fetch(PDO::FETCH_ASSOC);
+            $precio = $row['precio'];
+            $descuento = $row['descuento'];
+
+            $precio_desc = $precio - (($precio * $descuento) / 100);
+            $res = $cantidad * $precio_desc;
         }
+    } else {
+        return $res;
     }
 }
