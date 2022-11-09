@@ -22,6 +22,8 @@ if (isset($_POST['action'])) {
     $datos['ok'] = false;
 }
 
+echo json_encode($datos);
+
 function agregar($id, $cantidad)
 {
     $res = 0;
