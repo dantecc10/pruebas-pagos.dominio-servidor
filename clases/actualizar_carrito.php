@@ -9,7 +9,17 @@ if (isset($_POST['action'])) {
     if ($action == 'agregar') {
         $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
         agregar($id, $cantidad);
+        if ($respuesta > 0) {
+            $datos['ok'] = true;
+        } else {
+            $datos['ok'] = false;
+        }
+        $datos['sub'] = MONEDA . number_format($respuesta, 2, '.', ',');
+    } else {
+        $datos['ok'] = false;
     }
+} else {
+    $datos['ok'] = false;
 }
 
 function agregar($id, $cantidad)
