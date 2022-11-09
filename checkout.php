@@ -139,7 +139,7 @@ if ($productos != null) {
             let url = 'clases/actualizar_carrito.php'
             let formData = new FormData()
             formData.append('id', id)
-            formData.append('action', agregar)
+            formData.append('action', 'agregar')
             formData.append('cantidad', cantidad)
             fetch(url, {
                     method: 'POST',
