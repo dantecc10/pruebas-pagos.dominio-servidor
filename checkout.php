@@ -97,7 +97,7 @@ if ($productos != null) {
                                     <td><?php echo $nombre; ?></td>
                                     <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
                                     <td>
-                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="">
+                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizaCantidad(this.value, <?php echo $_id; ?>)">
                                     </td>
                                     <td>
                                         <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
@@ -135,11 +135,12 @@ if ($productos != null) {
         </div>
     </main>
     <script>
-        function addProducto(id, token) {
-            let url = 'clases/carrito.php'
+        function addProducto(cantidad, id) {
+            let url = 'clases/actualizar_carrito.php'
             let formData = new FormData()
             formData.append('id', id)
-            formData.append('token', token)
+            formData.append('action', agregar)
+            formData.append('cantidad', cantidad)
             fetch(url, {
                     method: 'POST',
                     body: formData,
