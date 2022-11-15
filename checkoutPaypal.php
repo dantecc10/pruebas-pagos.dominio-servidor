@@ -148,7 +148,7 @@
                 });
             },
             onCancel: function(data) {
-                alert("Pago cancelado");
+                alert("Pago canceladFo");
                 console.log(data);
             }
         }).render('#paypal-button-container');
