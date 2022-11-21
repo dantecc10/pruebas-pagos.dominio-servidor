@@ -8,7 +8,7 @@ if (isset($_POST['action'])) {
 
     if ($action == 'agregar') {
         $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
-        agregar($id, $cantidad);
+        $respuesta = agregar($id, $cantidad);
         if ($respuesta > 0) {
             $datos['ok'] = true;
         } else {
@@ -34,7 +34,7 @@ function agregar($id, $cantidad)
             $db = new Database();
             $con = $db->conectar();
 
-            $sql = $con->prepare("SELECT precio, descuento FROM productos WHERE id=? AND activo = 1");
+            $sql = $con->prepare("SELECT precio, descuento FROM productos WHERE id=? AND activo = 1 LIMIT 1");
             $sql->execute([$id]);
             $row = $sql->fetch(PDO::FETCH_ASSOC);
             $precio = $row['precio'];
