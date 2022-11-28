@@ -143,8 +143,8 @@ if ($productos != null) {
             fetch(url, {
                     method: 'POST',
                     body: formData,
-                    mode: 'cors',
-                    cache: "reload"
+                    mode: 'cors'
+                    //cache: "reload"
                 }).then(response => response.json())
                 .then(data => {
                     if (data.ok) {
