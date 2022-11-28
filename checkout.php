@@ -92,7 +92,6 @@ if ($productos != null) {
                                 $subtotal = $cantidad * $precio_desc;
                                 $total += $subtotal;
                         ?>
-
                                 <tr>
                                     <td><?php echo $nombre; ?></td>
                                     <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
