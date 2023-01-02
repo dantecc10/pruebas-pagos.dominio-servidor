@@ -1,4 +1,5 @@
 <?php
+/* Coonexion a db */
 require 'config/config.php';
 require 'config/database.php';
 $db = new Database();
@@ -33,13 +34,10 @@ print_r($_SESSION);
                 <a href="#" class="navbar-brand">
                     <strong>Tienda Online</strong>
                 </a>
-                
                 <!-- Contenido de la navbar -->
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
@@ -76,9 +74,7 @@ print_r($_SESSION);
                             <img src="<?php echo $imagen; ?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
-                                <p class="card-text">$
-                                    <?php echo number_format($row['precio'], 2, '.', ',');
-                                    $row['precio']; ?>
+                                <p class="card-text">$<?php echo number_format($row['precio'], 2, '.', ','); $row['precio']; ?>
                                 </p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
