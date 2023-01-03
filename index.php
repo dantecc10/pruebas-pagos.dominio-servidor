@@ -105,7 +105,7 @@ print_r($_SESSION);
                 .then(data => {
                     if (data.ok) {
                         let elemento = document.getElementById("num_cart")
-                        elemento.innerHTML = data.número
+                        elemento.innerHTML = data.numero
                     }
                 })
         }
