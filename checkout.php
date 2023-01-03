@@ -35,6 +35,7 @@ if ($productos != null) {
 <body>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Encabezado -->
     <header>
         <div class="navbar navbar-dark bg-dark navbar-expand-lg">
             <div class="container">
@@ -48,7 +49,7 @@ if ($productos != null) {
                 <div class="collapse navbar-collapse" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Catálogo</a>
+                            <a href="index.php" class="nav-link active">Catálogo</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Contacto</a>
@@ -61,7 +62,7 @@ if ($productos != null) {
             </div>
         </div>
     </header>
-
+    <!-- Contenido -->
     <main>
         <div class="container">
             <div class="table-responsive">
