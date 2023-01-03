@@ -8,7 +8,7 @@ $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
-#session_destroy();
+session_destroy();
 print_r($_SESSION);
 ?>
 <!DOCTYPE html>
@@ -54,7 +54,7 @@ print_r($_SESSION);
             </div>
         </div>
     </header>
-
+    <!-- Tarjetas dinamicas -->
     <main>
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 align-items-center">
