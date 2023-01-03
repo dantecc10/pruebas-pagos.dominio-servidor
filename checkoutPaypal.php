@@ -112,7 +112,7 @@
                 .then(data => {
                     if (data.ok) {
                         let elemento = document.getElementById("num_cart")
-                        elemento.innerHTML = data.numero
+                        elemento.innerHTML = data.número
                     }
                 })
         }
