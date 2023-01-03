@@ -27,7 +27,6 @@ if ($id == '' | $token == '') {
             $descuento = $row['descuento'];
             $precio_desc = $precio - (($precio * $descuento) / 100);
             $dir_images = 'images/productos/' . $id . '/';
-
             $rutaImg = $dir_images . 'principal.jpg';
 
             if (!file_exists($rutaImg)) {
@@ -98,12 +97,12 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </header>
-
+    <!-- Contenido -->
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-md-1">
-
+                    <!-- Carrucel de imagenes -->
                     <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
