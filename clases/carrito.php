@@ -16,7 +16,7 @@ if (isset($_POST['id'])) {
             $_SESSION['carrito']['productos'][$id] = 1;
         }
 
-        $datos['numero'] = count($_SESSION['carrito']['productos']);
+        $datos['numero'] = array_sum($_SESSION['carrito']['productos']);
         $datos['ok'] = true;
     } else {
         $datos['ok'] = false;
