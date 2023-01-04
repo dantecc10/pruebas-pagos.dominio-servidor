@@ -1,3 +1,4 @@
+<!-- No moverle a nada de acá -->
 <?php
 /* Conexion a db */
 require 'config/config.php';
