@@ -13,7 +13,7 @@ if ($id == '' | $token == '') {
 } else {
     $token_tmp = hash_hmac('sha1', $id, KEY_TOKEN);
 
-    if ($token == $token_tmp) {
+/*     if ($token == $token_tmp) {
         $sql = $con->prepare("SELECT array_sum(id) FROM productos WHERE id=? AND activo = 1 LIMIT 1");
         $sql->execute([$id]);
 
@@ -47,7 +47,7 @@ if ($id == '' | $token == '') {
     } else {
         echo 'Error al procesar la petición.';
         exit;
-    }
+    } */
 }
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
