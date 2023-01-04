@@ -1,13 +1,13 @@
 <?php
 /* Conexion a db */
 require 'config/config.php';
-/* require 'config/database.php'; */
+require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $token = isset($_GET['token']) ? $_GET['token'] : '';
 
-if ($id == '' | $token == '') {
+/* if ($id == '' | $token == '') {
     echo 'Error al procesar la petición.';
     exit;
 } else {
@@ -49,7 +49,7 @@ if ($id == '' | $token == '') {
         exit;
     }
 }
-
+ */
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
