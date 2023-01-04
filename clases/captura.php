@@ -17,8 +17,8 @@
         $status = $datos['detalles']['status'];
         $fecha = $datos['detalles']['update_time'];
         $fecha_nueva = date('Y-m-d H:i:s', strtotime($fecha));
-        $email = $datos['detalles']['payes']['email_address'];
-        $id_cliete = $datos['detalles']['payes']['payer_id'];
+        $email = $datos['detalles']['payer']['email_address'];
+        $id_cliete = $datos['detalles']['payer']['payer_id'];
 
         $sql = $con->prepare("INSERT INTO compra (id_transacción, fecha, status, email, id_cliente, total) VALUES (?,?,?,?,?,?)");
         $sql->execute([$id_trasaccion, $fecha_nueva, $status, $email, $id_cliete, $total]);
