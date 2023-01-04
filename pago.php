@@ -14,9 +14,10 @@ if ($productos != null) {
         $sql->execute([$clave]);
         $lista_carrito[] = ($sql->fetch(PDO::FETCH_ASSOC));
     }
+} else {
+    header("Location: index.php");
+    exit;
 }
-
-
 #session_destroy();
 ?>
 <!DOCTYPE html>
@@ -70,8 +71,6 @@ if ($productos != null) {
                     <thead>
                         <tr>
                             <th>Producto</th>
-                            <th>Precio</th>
-                            <th>Cantidad</th>
                             <th>Subtotal</th>
                             <th></th>
                         </tr>
@@ -95,21 +94,12 @@ if ($productos != null) {
                         ?>
                                 <tr>
                                     <td><?php echo $nombre; ?></td>
-                                    <td><?php echo MONEDA . number_format($precio_desc, 2, '.', ','); ?></td>
-                                    <td>
-                                        <input type="number" min="1" max="10" step="1" value="<?php echo $cantidad ?>" size="5" id="cantidad_<?php echo $_id; ?>" onchange="actualizaCantidad(this.value, <?php echo $_id; ?>)">
-                                    </td>
                                     <td>
                                         <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
                                             <?php
                                             echo MONEDA . number_format($subtotal, 2, '.', ',');
                                             ?>
                                         </div>
-                                    </td>
-                                    <td>
-                                        <a href="#" id="eliminar" class="btn btn-warning btn-sm" data-bs-id="<?php echo $_id; ?>" data-bs-toggle="modal" data-bs-target="#eliminaModal">
-                                            Eliminar
-                                        </a>
                                     </td>
                                 </tr>
                             <?php
