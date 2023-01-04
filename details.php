@@ -1,9 +1,10 @@
+<!-- No moverle a nada de acá -->
 <?php
+/* Conexion a db */
 require 'config/config.php';
 require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
-
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $token = isset($_GET['token']) ? $_GET['token'] : '';
 
@@ -27,7 +28,6 @@ if ($id == '' | $token == '') {
             $descuento = $row['descuento'];
             $precio_desc = $precio - (($precio * $descuento) / 100);
             $dir_images = 'images/productos/' . $id . '/';
-
             $rutaImg = $dir_images . 'principal.jpg';
 
             if (!file_exists($rutaImg)) {
@@ -39,7 +39,7 @@ if ($id == '' | $token == '') {
 
                 while (($archivo = $dir->read()) != false) {
                     if ($archivo != 'principal.jpg' && (strpos($archivo, 'jpg') || (strpos($archivo, 'jpeg')) || (strpos($archivo, 'png')))) {
-                        $imágenes[] = $dir_images . $archivo;
+                        $imagenes[] = $dir_images . $archivo;
                     }
                 }
                 $dir->close();
@@ -50,7 +50,6 @@ if ($id == '' | $token == '') {
         exit;
     }
 }
-
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -71,38 +70,39 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <!-- Encabezado -->
     <header>
         <div class="navbar navbar-dark bg-dark navbar-expand-lg">
+            <!-- Contenido navbar -->
             <div class="container">
-                <a href="#" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <strong>Tienda Online</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarHeader">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Catálogo</a>
+                            <a href="index.php" class="nav-link active">Catálogo</a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">Contacto</a>
                         </li>
                     </ul>
-                    <a href="carrito.php" class="btn btn-primary">
+                    <a href="checkout.php" class="btn btn-primary">
                         Carrito <span id="num_cart" class="badge bg-secondary"><?php echo $num_cart; ?></span>
                     </a>
                 </div>
             </div>
         </div>
     </header>
-
+    <!-- Contenido -->
     <main>
         <div class="container">
             <div class="row">
                 <div class="col-md-6 order-md-1">
-
+                    <!-- Carrucel de imagenes -->
                     <div id="carouselImages" class="carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
@@ -175,5 +175,4 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         }
     </script>
 </body>
-
 </html>

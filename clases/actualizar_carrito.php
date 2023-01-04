@@ -5,6 +5,7 @@ require '../config/database.php';
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
     $id = isset($_POST['id']) ? $_POST['id'] : 0;
+   
     if ($action == 'agregar') {
         $cantidad = isset($_POST['cantidad']) ? $_POST['cantidad'] : 0;
         $respuesta = agregar($id, $cantidad);
@@ -14,17 +15,13 @@ if (isset($_POST['action'])) {
             $datos['ok'] = false;
         }
         $datos['sub'] = MONEDA . number_format($respuesta, 2, '.', ',');
+    } else if($action == 'eliminar'){
+        $datos['ok'] = eliminar($id);
     } else {
         $datos['ok'] = false;
-        echo "<script>
-    console.log('Te atoraste en el if de $action == 'agregar');
-    <script>";
     }
 } else {
     $datos['ok'] = false;
-    echo "<script>
-    console.log('Te atoraste en el if de $action == 'agregar');
-    <script>";
 }
 
 echo json_encode($datos);
@@ -47,8 +44,21 @@ function agregar($id, $cantidad)
 
             $precio_desc = $precio - (($precio * $descuento) / 100);
             $res = $cantidad * $precio_desc;
+
+            return $res;
         }
     } else {
         return $res;
+    }
+}
+
+function eliminar($id){
+    if($id > 0){
+        if (isset($_SESSION['carrito']['productos'][$id])){
+            unset($_SESSION['carrito']['productos'][$id]);
+            return true;
+        } else {
+            return false;
+        }
     }
 }
