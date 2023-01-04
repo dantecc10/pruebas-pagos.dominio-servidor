@@ -9,7 +9,7 @@ $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
 
 #session_destroy();
-print_r($_SESSION);
+#print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="es-MX">
@@ -70,7 +70,7 @@ print_r($_SESSION);
                                 $imagen = "images/no-photo.jpg";
                             }
                             ?>
-                            <img src="<?php echo $imagen; ?>" class="d-block w-100">
+                            <img src="<?php echo $imagen; ?>" class="d-block w-100" width="100%">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $row['nombre']; ?></h5>
                                 <p class="card-text">$<?php echo number_format($row['precio'], 2, '.', ','); $row['precio']; ?>
