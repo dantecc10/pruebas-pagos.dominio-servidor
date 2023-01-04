@@ -66,6 +66,12 @@ if ($productos != null) {
     <!-- Contenido -->
     <main>
         <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h4>Detalles de pago</h4>
+                </div>
+                <div class="col-6"></div>
+            
             <div class="table-responsive">
                 <table class="table">
                     <thead>
@@ -117,11 +123,13 @@ if ($productos != null) {
                 <?php } ?>
                 </table>
             </div>
+
             <div class="row">
                 <div class="col-md-5 offset-md-7 d-grid gap-2">
                     <button class="btn btn-lg btn-primary">Realizar pago</button>
                 </div>
             </div>
+        </div>
         </div>
     </main>
 
