@@ -149,6 +149,16 @@ if ($productos != null) {
                 let URL = 'clases/captura.php'
                 actions.order.capture().then(function(detalles) {
                     console.log(detalles);
+
+                    return fetch(URL, {
+                        method: 'post',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            detalles: detalles
+                        })
+                    })
                 });
             },
             onCancel: function(data) {
