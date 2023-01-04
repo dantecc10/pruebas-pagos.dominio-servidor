@@ -122,101 +122,12 @@ if ($productos != null) {
                         <?php } ?>
                         </table>
                     </div>
-
-                    <div class="row">
-                        <div class="col-md-5 offset-md-7 d-grid gap-2">
-                            <button class="btn btn-lg btn-primary">Realizar pago</button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Modal -->
-    <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="eliminaModal" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Alerta</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ¿Desea eliminar el producto de la lista?
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button id="btn-elimina" type="button" class="btn btn-danger" onclick="eliminar()">Eliminar producto</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Actualizar cantidad y precio del producto -->
-    <script>
-        let eliminaModal = document.getElementById('eliminaModal')
-        eliminaModal.addEventListener('show.bs.modal', function(event) {
-            let button = event.relatedTarget
-            let id = button.getAttribute('data-bs-id')
-            let buttonElimina = eliminaModal.querySelector('.modal-footer #btn-elimina')
-            buttonElimina.value = id
-        })
-
-        function actualizaCantidad(cantidad, id) {
-            let url = 'clases/actualizar_carrito.php'
-            let formData = new FormData()
-            formData.append('action', 'agregar')
-            formData.append('id', id)
-            formData.append('cantidad', cantidad)
-            fetch(url, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'cors'
-                    //cache: "reload"
-                }).then(response => response.json())
-                .then(data => {
-                    if (data.ok) {
-                        let divsubtotal = document.getElementById('subtotal_' + id)
-                        divsubtotal.innerHTML = data.sub
-
-                        let total = 0.00
-                        let list = document.getElementsByName('subtotal[]')
-
-                        for (i = 0; i < list.length; i++) {
-                            total += parseFloat(list[i].innerHTML.replace(/[$,]/g, ''))
-                        }
-
-                        total = new Intl.NumberFormat('en-US', {
-                            minimumFractionDigits: 2
-                        }).format(total)
-
-                        document.getElementById('total').innerHTML = '<?php echo MONEDA; ?>' + total
-                    }
-                })
-        }
-
-        function eliminar() {
-
-            let botonElimina = document.getElementById('btn-elimina')
-            let id = botonElimina.value
-
-            let url = 'clases/actualizar_carrito.php'
-            let formData = new FormData()
-            formData.append('action', 'eliminar')
-            formData.append('id', id)
-            fetch(url, {
-                    method: 'POST',
-                    body: formData,
-                    mode: 'cors'
-                    //cache: "reload"
-                }).then(response => response.json())
-                .then(data => {
-                    if (data.ok) {
-                        location.reload()
-                    }
-                })
-        }
-    </script>
+    <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
 </body>
 
 </html>
