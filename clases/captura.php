@@ -13,7 +13,7 @@
 
     if (is_array($datos)) {
         $id_trasaccion = $datos['detalles']['id'];
-        $total = $datos['detalles']['purchace_units'][0]['amount']['value'];
+        $total = $datos['detalles']['purchase_units'][0]['amount']['value'];
         $status = $datos['detalles']['status'];
         $fecha = $datos['detalles']['update_time'];
         $fecha_nueva = date('Y-m-d H:i:s', strtotime($fecha));
