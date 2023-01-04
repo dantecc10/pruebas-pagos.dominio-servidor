@@ -25,4 +25,21 @@
         $id = $con->lastInsertId();
     }
 
+    if ($id > 0) {
+        $productos = isset($_SESSION['carrito']['productos']) ? $_SESSION['carrito']['productos'] : null;
+        
+        if ($productos != null) {
+            foreach ($productos as $clave => $cantidad) {
+                $sql = $con->prepare("SELECT id, nombre, precio, descuento FROM productos WHERE id=? AND activo=1");
+                $sql->execute([$clave]);
+                $row_prod[] = ($sql->fetch(PDO::FETCH_ASSOC));
+
+                $precio = $row_prod['precio'];
+                $descuento = $row_prod['descuento'];
+                $precio_desc = $precio - (($precio * $descuento) / 100);
+
+            }
+        }
+    }
+
 ?>
