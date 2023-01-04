@@ -140,15 +140,15 @@ if ($productos != null) {
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: 100
+                            value: <?php echo $total; ?>
                         }
                     }]
                 });
             },
             onApprove: function(data, actions) {
+                let URL = 'clases/captura.php'
                 actions.order.capture().then(function(detalles) {
                     console.log(detalles);
-                    // window.location.href="/completado.html";
                 });
             },
             onCancel: function(data) {
