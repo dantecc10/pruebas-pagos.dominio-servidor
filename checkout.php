@@ -148,7 +148,7 @@ if ($productos != null) {
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button id="btn-elimina" type="button" class="btn btn-danger" onclick="elimina()">Eliminar producto</button>
+            <button id="btn-elimina" type="button" class="btn btn-danger" onclick="eliminar()">Eliminar producto</button>
         </div>
         </div>
     </div>
@@ -196,7 +196,7 @@ if ($productos != null) {
                 })
         }
 
-        function elimia() {
+        function elimiar() {
 
             let botonElimina = document.getElementById('btn-elimina')
             let id = botonElimina.value
