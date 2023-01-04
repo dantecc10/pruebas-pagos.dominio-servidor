@@ -75,7 +75,7 @@ $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         <div class="navbar navbar-dark bg-dark navbar-expand-lg">
             <!-- Contenido navbar -->
             <div class="container">
-                <a href="#" class="navbar-brand">
+                <a href="index.php" class="navbar-brand">
                     <strong>Tienda Online</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
