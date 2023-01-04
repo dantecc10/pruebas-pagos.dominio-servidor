@@ -7,7 +7,7 @@ $con = $db->conectar();
 $id = isset($_GET['id']) ? $_GET['id'] : '';
 $token = isset($_GET['token']) ? $_GET['token'] : '';
 
-/* if ($id == '' | $token == '') {
+if ($id == '' | $token == '') {
     echo 'Error al procesar la petición.';
     exit;
 } else {
@@ -49,7 +49,6 @@ $token = isset($_GET['token']) ? $_GET['token'] : '';
         exit;
     }
 }
- */
 $sql = $con->prepare("SELECT id, nombre, precio FROM productos WHERE activo=1");
 $sql->execute();
 $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
