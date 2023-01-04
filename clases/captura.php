@@ -5,7 +5,7 @@
     $db = new Database();
     $con = $db->conectar();
 
-    $json = file_get_contents('php//inptu');
+    $json = file_get_contents('php//input');
     $datos = json_decode($json, true);
 
     echo '<pre>';
