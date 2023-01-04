@@ -148,7 +148,7 @@ if ($productos != null) {
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button type="button" class="btn btn-primary">Eliminar producto</button>
+            <button id="btn-elimina" type="button" class="btn btn-danger" onclick="elimina()">Eliminar producto</button>
         </div>
         </div>
     </div>
@@ -156,6 +156,15 @@ if ($productos != null) {
 
     <!-- Actualizar cantidad y precio del producto -->
     <script>
+
+        let eliminaModal = document.getElementById('eliminaModal')
+        eliminaModal.addEventListener('show.bs.modal'), function(event){
+            let button = event.relatedTarget
+            let id = button.getAttribute('data-bs-id')
+            let buttonElimina = eliminaModal.querySelector('.modal-footer #btn-elimina')
+            buttonElimina.value = id
+        }
+
         function actualizaCantidad(cantidad, id) {
             let url = 'clases/actualizar_carrito.php'
             let formData = new FormData()
@@ -183,6 +192,28 @@ if ($productos != null) {
                         total = new Intl.NumberFormat('en-US', {minimumFractionDigits : 2}).format(total)
 
                         document.getElementById('total').innerHTML = '<?php echo MONEDA; ?>' + total
+                    }
+                })
+        }
+
+        function elimia() {
+
+            let botonElimina = document.getElementById('btn-elimina')
+            let id = botonElimina.value
+
+            let url = 'clases/actualizar_carrito.php'
+            let formData = new FormData()
+            formData.append('action', 'eliminar')
+            formData.append('id', id)
+            fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'cors'
+                    //cache: "reload"
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        location.reload()
                     }
                 })
         }
