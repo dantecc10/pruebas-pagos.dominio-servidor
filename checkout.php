@@ -196,7 +196,7 @@ if ($productos != null) {
                 })
         }
 
-        function elimiar() {
+        function eliminar() {
 
             let botonElimina = document.getElementById('btn-elimina')
             let id = botonElimina.value
