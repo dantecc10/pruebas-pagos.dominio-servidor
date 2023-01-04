@@ -70,98 +70,97 @@ if ($productos != null) {
                 <div class="col-6">
                     <h4>Detalles de pago</h4>
                 </div>
-                <div class="col-6"></div>
-            
-            <div class="table-responsive">
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>Producto</th>
-                            <th>Subtotal</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <?php
-                        if ($lista_carrito == null) {
-                            echo '<tr><td colspan="5" class="text-center"><b>Lista vacía</b></td></tr>';
-                        } else {
-                            $total = 0;
-                            foreach ($lista_carrito as $producto) {
-                                $_id = $producto['id'];
-                                $nombre = $producto['nombre'];
-                                $precio = $producto['precio'];
-                                $descuento = $producto['descuento'];
-                                $cantidad = $producto['cantidad'];
-                                $precio_desc = $precio - (($precio * $descuento) / 100);
-                                $subtotal = $cantidad * $precio_desc;
-                                $total += $subtotal;
-                        ?>
+                <div class="col-6">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
                                 <tr>
-                                    <td><?php echo $nombre; ?></td>
-                                    <td>
-                                        <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
-                                            <?php
-                                            echo MONEDA . number_format($subtotal, 2, '.', ',');
-                                            ?>
-                                        </div>
-                                    </td>
+                                    <th>Producto</th>
+                                    <th>Subtotal</th>
+                                    <th></th>
                                 </tr>
-                            <?php
-                            }
-                            ?>
+                            </thead>
 
-                            <tr>
-                                <td colspan="3"></td>
-                                <td colspan="2">
-                                    <p class="h3" id="total"><?php echo MONEDA . number_format($total, 2, '.', ','); ?></p>
-                                </td>
-                                <td colspan="3"></td>
-                            </tr>
-                    </tbody>
-                <?php } ?>
-                </table>
-            </div>
+                            <tbody>
+                                <?php
+                                if ($lista_carrito == null) {
+                                    echo '<tr><td colspan="5" class="text-center"><b>Lista vacía</b></td></tr>';
+                                } else {
+                                    $total = 0;
+                                    foreach ($lista_carrito as $producto) {
+                                        $_id = $producto['id'];
+                                        $nombre = $producto['nombre'];
+                                        $precio = $producto['precio'];
+                                        $descuento = $producto['descuento'];
+                                        $cantidad = $producto['cantidad'];
+                                        $precio_desc = $precio - (($precio * $descuento) / 100);
+                                        $subtotal = $cantidad * $precio_desc;
+                                        $total += $subtotal;
+                                ?>
+                                        <tr>
+                                            <td><?php echo $nombre; ?></td>
+                                            <td>
+                                                <div id="subtotal_<?php echo $_id; ?>" name="subtotal[]">
+                                                    <?php
+                                                    echo MONEDA . number_format($subtotal, 2, '.', ',');
+                                                    ?>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    <?php
+                                    }
+                                    ?>
 
-            <div class="row">
-                <div class="col-md-5 offset-md-7 d-grid gap-2">
-                    <button class="btn btn-lg btn-primary">Realizar pago</button>
+                                    <tr>
+                                        <td colspan="3"></td>
+                                        <td colspan="2">
+                                            <p class="h3" id="total"><?php echo MONEDA . number_format($total, 2, '.', ','); ?></p>
+                                        </td>
+                                        <td colspan="3"></td>
+                                    </tr>
+                            </tbody>
+                        <?php } ?>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-5 offset-md-7 d-grid gap-2">
+                            <button class="btn btn-lg btn-primary">Realizar pago</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
         </div>
     </main>
 
     <!-- Modal -->
     <div class="modal fade" id="eliminaModal" tabindex="-1" aria-labelledby="eliminaModal" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Alerta</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Alerta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ¿Desea eliminar el producto de la lista?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button id="btn-elimina" type="button" class="btn btn-danger" onclick="eliminar()">Eliminar producto</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-            ¿Desea eliminar el producto de la lista?
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-            <button id="btn-elimina" type="button" class="btn btn-danger" onclick="eliminar()">Eliminar producto</button>
-        </div>
-        </div>
-    </div>
     </div>
 
     <!-- Actualizar cantidad y precio del producto -->
     <script>
-
         let eliminaModal = document.getElementById('eliminaModal')
-        eliminaModal.addEventListener('show.bs.modal', function(event){
+        eliminaModal.addEventListener('show.bs.modal', function(event) {
             let button = event.relatedTarget
             let id = button.getAttribute('data-bs-id')
             let buttonElimina = eliminaModal.querySelector('.modal-footer #btn-elimina')
             buttonElimina.value = id
-            })
+        })
 
         function actualizaCantidad(cantidad, id) {
             let url = 'clases/actualizar_carrito.php'
@@ -187,7 +186,9 @@ if ($productos != null) {
                             total += parseFloat(list[i].innerHTML.replace(/[$,]/g, ''))
                         }
 
-                        total = new Intl.NumberFormat('en-US', {minimumFractionDigits : 2}).format(total)
+                        total = new Intl.NumberFormat('en-US', {
+                            minimumFractionDigits: 2
+                        }).format(total)
 
                         document.getElementById('total').innerHTML = '<?php echo MONEDA; ?>' + total
                     }
