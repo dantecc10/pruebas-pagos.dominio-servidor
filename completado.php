@@ -9,13 +9,13 @@ $id_transaccion = isset($_GET['key']) ? $_GET['key']  : '0';
 $error = ':';
 if ($id_transaccion == 0) {
     $error = 'Error al procesar la informaicón';
-}/*  else {
-    $sql = $con->prepare("SELECT count(id) FROM compra WHERE id_transaccion=? AND status = ?");
-    $sql->execute([$id_transaccion, 'COMPLETED']);
+} else {
+    $sql = $con->prepare("SELECT count(id) FROM compra WHERE id_transacción=? AND status = ?");
+    $sql->execute([$id_transacción, 'COMPLETED']);
 
     if ($sql->fetchColumn() > 0) {
 
-        $sql = $con->prepare("SELECT id, fecha, email, total FROM compra  WHERE id_transaccion=? AND status = ?");
+        $sql = $con->prepare("SELECT id, fecha, email, total FROM compra  WHERE id_transacción=? AND status = ?");
         $sql->execute([$id_transaccion, 'COMPLETED']);
         $row = $sql->fetch(PDO::FETCH_ASSOC);
 
@@ -28,7 +28,7 @@ if ($id_transaccion == 0) {
     } else {
         $error = 'Error al comprobar la compra';
     }
-} */
+}
 
 ?>
 
