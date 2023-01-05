@@ -32,7 +32,7 @@
             foreach ($productos as $clave => $cantidad) {
                 $sql = $con->prepare("SELECT id, nombre, precio, descuento FROM productos WHERE id=? AND activo=1");
                 $sql->execute([$clave]);
-                $row_prod[] = ($sql->fetch(PDO::FETCH_ASSOC));
+                $row_prod = $sql->fetch(PDO::FETCH_ASSOC);
 
                 $precio = $row_prod['precio'];
                 $descuento = $row_prod['descuento'];
