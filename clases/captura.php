@@ -44,6 +44,6 @@
             include 'enviar_email.php';
         }
         unset($_SESSION['carrito']);
-        header("Location: index.php");
+        //header("Location: index.php");
     }
 ?>
