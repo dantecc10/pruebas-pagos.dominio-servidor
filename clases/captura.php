@@ -10,6 +10,7 @@ $datos = json_decode($json, true);
 
 echo '<pre>';
 print_r($datos);
+echo '</pre>';
 
 if (is_array($datos)) {
     $id_trasaccion = $datos['detalles']['id'];
