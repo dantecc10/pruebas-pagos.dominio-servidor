@@ -1,5 +1,5 @@
 <?php
-require 'config/config.php';
+/* require 'config/config.php';
 require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
@@ -28,7 +28,7 @@ if ($id_transaccion == 0) {
         $error = 'Error al comprobar la compra';
     }
 }
-
+ */
 ?>
 
 <!DOCTYPE html>
