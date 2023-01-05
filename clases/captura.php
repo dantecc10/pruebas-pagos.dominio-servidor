@@ -23,6 +23,7 @@ if (is_array($datos)) {
 
     $sql = $con->prepare("INSERT INTO compra (id_transacción, fecha, status, email, id_cliente, total) VALUES (', ', ', ', ', ')");
     $sql->execute([$id_transacción, $fecha_nueva, $status, $email, $id_cliente, $total]);
+    $id = $con->lastInsertId();
 }
 
 if ($id > 0) {
