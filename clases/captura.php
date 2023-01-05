@@ -13,7 +13,7 @@ print_r($datos);
 echo '</pre>';
 
 if (is_array($datos)) {
-    $id_transacciónn = $datos['detalles']['id'];
+    $id_transacción = $datos['detalles']['id'];
     $monto = $datos['detalles']['purchase_units'][0]['amount']['value'];
     $status = $datos['detalles']['status'];
     $fecha = $datos['detalles']['update_time'];
