@@ -25,12 +25,12 @@ try {
     //Recipients
     $mail->setFrom('no-reply@castelancarpinteyro.club', 'Tienda online');
     $mail->addAddress('jeremy.hdez9@gmail.com', 'User');     //Add a recipient
-/*     $mail->addReplyTo('info@example.com', 'Information');
+    /*     $mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com'); */
 
     //Envio de archivos
-/*     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
+    /*     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); */    //Optional name
 
     //Content
