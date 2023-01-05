@@ -8,8 +8,8 @@
     $json = file_get_contents('php://input');
     $datos = json_decode($json, true);
 
-/*     echo '<pre>';
-    print_r($datos); */
+/*     echo '<pre>';*/
+    print_r($datos);
 
     if (is_array($datos)) {
         $id_trasaccion = $datos['detalles']['id'];
@@ -46,4 +46,3 @@
         unset($_SESSION['carrito']);
         //header("Location: index.php");
     }
-?>
