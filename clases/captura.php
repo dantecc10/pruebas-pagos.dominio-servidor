@@ -42,6 +42,6 @@
                 $sql_insert->execute([$id, $clave, $row_prod['nombre'], $precio_desc, $cantidad]);
             }
         }
+        unset($_SESSION['carrito']);
     }
-    
 ?>
