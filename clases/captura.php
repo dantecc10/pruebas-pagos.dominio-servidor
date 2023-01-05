@@ -21,7 +21,7 @@ if (is_array($datos)) {
     $email = $datos['detalles']['payer']['email_address'];
     $id_cliente = $datos['detalles']['payer']['payer_id'];
 
-    $sql = $con->prepare("INSERT INTO compra (id_transacción, fecha, status, email, id_cliente, total) VALUES (', ', ', ', ', ')");
+    $sql = $con->prepare("INSERT INTO compra (`id_transacción`, fecha, status, email, id_cliente, total) VALUES (', ', ', ', ', ')");
     $sql->execute([$id_transacción, $fecha_nueva, $status, $email, $id_cliente, $total]);
     $id = $con->lastInsertId();
 }

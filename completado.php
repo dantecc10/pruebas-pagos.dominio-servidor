@@ -4,11 +4,11 @@ require 'config/database.php';
 $db = new Database();
 $con = $db->conectar();
 
-$id_transaccion = isset($_GET['key']) ? $_GET['key']  : '0';
+$id_transacción = isset($_GET['key']) ? $_GET['key']  : '0';
 
 $error = '';
-if ($id_transaccion == 0) {
-    $error = 'Error al procesar la informaicón';
+if ($id_transacción == 0) {
+    $error = 'Error al procesar la información';
 } else {
     $sql = $con->prepare("SELECT count(id) FROM compra WHERE id_transacción=? AND status = ?");
     $sql->execute([$id_transacción, 'COMPLETED']);
@@ -16,7 +16,7 @@ if ($id_transaccion == 0) {
     if ($sql->fetchColumn() > 0) {
 
         $sql = $con->prepare("SELECT id, fecha, email, total FROM compra WHERE id_transacción=? AND status = ?");
-        $sql->execute([$id_transaccion, 'COMPLETED']);
+        $sql->execute([$id_transacción, 'COMPLETED']);
         $row = $sql->fetch(PDO::FETCH_ASSOC);
 
         $idCompra = $row['id'];
@@ -90,7 +90,7 @@ if ($id_transaccion == 0) {
 
                 <div class="row">
                     <div class="col">
-                        <b>Folio de la compra: </b><?php echo $id_transaccion; ?> <br>
+                        <b>Folio de la compra: </b><?php echo $id_transacción; ?> <br>
                         <b>Fecha de compra: </b><?php echo $fecha; ?> <br>
                         <b>Total: </b><?php echo MONEDA . number_format($total, 2, '.', ','); ?> <br>
                     </div>
