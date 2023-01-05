@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 require '../phpmailer/src/PHPMailer.php';
-require '../phpmailer//src/SMTP.php';
+require '../phpmailer/src/SMTP.php';
 require '../phpmailer/src/Exception.php';
 
 //Create an instance; passing `true` enables exceptions
@@ -17,14 +17,14 @@ try {
     $mail->isSMTP();                                                             //Send using SMTP
     $mail->Host       = 'prueba-pagos.castelancarpinteyro.club';                 //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
-    $mail->Username   = 'dante@castelancarpinteyro.club';                     //SMTP username
-    $mail->Password   = 'Y696zbii_q.5pYT';                               //SMTP password
+    $mail->Username   = 'no-reply@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
+    $mail->Password   = 'serverReply1!';                               //SMTP password
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('no-reply@castelancarpinteyro.club', 'Tienda online');
-    $mail->addAddress('jeremy.hdez9@gmail.com', 'User');     //Add a recipient
+    $mail->setFrom('no-reply@prueba-pagos.castelancarpinteyro.club', 'Tienda online');
+    $mail->addAddress('dante@castelancarpinteyro.club', 'User');     //Add a recipient
     /*     $mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com'); */
