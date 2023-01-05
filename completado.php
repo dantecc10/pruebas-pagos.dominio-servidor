@@ -9,7 +9,7 @@ $id_transaccion = isset($_GET['key']) ? $_GET['key']  : '0';
 $error = ':';
 if ($id_transaccion == 0) {
     $error = 'Error al procesar la informaicón';
-} else {
+}/*  else {
     $sql = $con->prepare("SELECT count(id) FROM compra WHERE id_transaccion=? AND status = ?");
     $sql->execute([$id_transaccion, 'COMPLETED']);
 
@@ -28,7 +28,7 @@ if ($id_transaccion == 0) {
     } else {
         $error = 'Error al comprobar la compra';
     }
-}
+} */
 
 ?>
 
