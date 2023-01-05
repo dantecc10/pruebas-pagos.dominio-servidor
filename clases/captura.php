@@ -43,5 +43,6 @@
             }
         }
         unset($_SESSION['carrito']);
+        header("Location: index.php");
     }
 ?>
