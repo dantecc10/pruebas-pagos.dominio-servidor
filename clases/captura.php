@@ -13,16 +13,16 @@ print_r($datos);
 echo '</pre>';
 
 if (is_array($datos)) {
-    $id_transacción = $datos['detalles']['id'];
-    $monto = $datos['detalles']['purchase_units'][0]['amount']['value'];
+    $id_trasacción = $datos['detalles']['id'];
+    $total = $datos['detalles']['purchase_units'][0]['amount']['value'];
     $status = $datos['detalles']['status'];
     $fecha = $datos['detalles']['update_time'];
     $fecha_nueva = date('Y-m-d H:i:s', strtotime($fecha));
     $email = $datos['detalles']['payer']['email_address'];
-    $id_cliente = $datos['detalles']['payer']['payer_id'];
+    $id_cliete = $datos['detalles']['payer']['payer_id'];
 
-    $sql = $con->prepare("INSERT INTO compra (`id_transacción`, fecha, status, email, id_cliente, total) VALUES (?, ?, ?, ?, ?, ?)");
-    $sql->execute([$id_transacción, $fecha_nueva, $status, $email, $id_cliente, $total]);
+    $sql = $con->prepare("INSERT INTO compra (id_transacción, fecha, status, email, id_cliente, total) VALUES (?,?,?,?,?,?)");
+    $sql->execute([$id_trasacción, $fecha_nueva, $status, $email, $id_cliete, $total]);
     $id = $con->lastInsertId();
 }
 
