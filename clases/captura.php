@@ -20,8 +20,6 @@
         $email = $datos['detalles']['payer']['email_address'];
         $id_cliete = $datos['detalles']['payer']['payer_id'];
 
-        print_r($id_trasaccion, $total, $status, $fecha, $email, $id_cliete);
-
         $sql = $con->prepare("INSERT INTO compra (id_transacción, fecha, status, email, id_cliente, total) VALUES (?,?,?,?,?,?)");
         $sql->execute([$id_trasaccion, $fecha_nueva, $status, $email, $id_cliete, $total]);
         $id = $con->lastInsertId();
@@ -45,5 +43,5 @@
             }
         }
     }
-
+    print_r($id_trasaccion, $total, $status, $fecha, $email, $id_cliete);
 ?>
