@@ -95,6 +95,12 @@ $con = $db->conectar();
                     <label for="repassword"><span class="text-danger">*Escriba otra vez su contraseña</span></label>
                     <input type="password" name="repassword" id="repassword" class="form-control" required>
                 </div>
+
+                <i><b>Nota:</b> Los campos con un asterisco(*) son obligatorios</i>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Registar</button>
+                </div>
             </form>
         </div>
     </main>
