@@ -82,6 +82,11 @@ $con = $db->conectar();
                 </div>
 
                 <div class=" col-md-6">
+                    <label for="usuario"><span class="text-danger">*Escriba un nombre de usuario</span></label>
+                    <input type="text" name="usuario" id="usuario" class="form-control" required>
+                </div>
+
+                <div class=" col-md-6">
                     <label for="password"><span class="text-danger">*Contrasña</span></label>
                     <input type="password" name="password" id="password" class="form-control" required>
                 </div>
