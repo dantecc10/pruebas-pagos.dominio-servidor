@@ -29,7 +29,7 @@ if(!empty($_POST)){
     } else {
         $errors [] = "Error al registrar el usuario";
     }
-
+    
     if (count($erros) == 0) {
         
     }else{
