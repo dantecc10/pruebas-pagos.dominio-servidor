@@ -24,7 +24,7 @@ try {
 
     //Recipients
     $mail->setFrom('no-reply@prueba-pagos.castelancarpinteyro.club', 'Tienda online');
-    $mail->addAddress('dante@castelancarpinteyro.club', 'User');     //Add a recipient
+    $mail->addAddress('jeremy.hdez9@gmail.com', 'User');     //Add a recipient
     /*$mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com'); */
