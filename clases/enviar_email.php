@@ -45,7 +45,7 @@ try {
     $mail->Subject = 'Detalles de compra';
 
     $cuerpo = '<h4>Gracias por su compra</h4>';
-    $cuerpo .= '<p>El ID de su compra es <b>' . $id_trasacción . '</b></p>';
+    $cuerpo .= '<p>El ID de su compra es <b>' . $id_transacción . '</b></p>';
 
     $mail->Body    = imap_utf8($cuerpo);
     $mail->AltBody = 'Detalles de compra';
