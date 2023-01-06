@@ -60,6 +60,36 @@ $con = $db->conectar();
                     <label for="nombres"><span class="text-danger">*Nombres</span></label>
                     <input type="text" name="nombres" id="nombres" class="form-control" required>
                 </div>
+
+                <div class=" col-md-6">
+                    <label for="apellidos"><span class="text-danger">*Apellidos</span></label>
+                    <input type="text" name="apellidos" id="apellidos" class="form-control" required>
+                </div>
+
+                <div class=" col-md-6">
+                    <label for="email"><span class="text-danger">*email</span></label>
+                    <input type="text" name="email" id="email" class="form-control" required>
+                </div>
+
+                <div class=" col-md-6">
+                    <label for="telefono"><span class="text-danger">*Numero telefonico</span></label>
+                    <input type="tel" name="telefono" id="telefono" class="form-control" required>
+                </div>
+
+                <div class=" col-md-6">
+                    <label for="dni"><span class="text-danger">*DNI</span></label>
+                    <input type="text" name="dni" id="dni" class="form-control" required>
+                </div>
+
+                <div class=" col-md-6">
+                    <label for="password"><span class="text-danger">*Contrasña</span></label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+
+                <div class=" col-md-6">
+                    <label for="repassword"><span class="text-danger">*Escriba otra vez su contraseña</span></label>
+                    <input type="password" name="repassword" id="repassword" class="form-control" required>
+                </div>
             </form>
         </div>
     </main>
