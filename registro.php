@@ -2,8 +2,41 @@
 /* Coonexion a db */
 require 'config/config.php';
 require 'config/database.php';
+require 'clases/clienteFunciones.php';
 $db = new Database();
 $con = $db->conectar();
+
+$errors = [];
+
+if(!empty($_POST)){
+
+    $nombres = trim($_POST['nombres']);
+    $apellidos = trim($_POST['apellidos']);
+    $email = trim($_POST['email']);
+    $telefono = trim($_POST['telefono']);
+    $dni = trim($_POST['dni']);
+    $usuario = trim($_POST['usuario']);
+    $password = trim($_POST['password']);
+    $repassword = trim($_POST['repassword']);
+
+    $id = registraCliente([$nombres, $apellidos, $email, $telefono, $dni], $con);
+    if ($id > 0) {
+        $pass_hash = password_hash($password, PASSWORD_DEFAULT);
+        $token = generarToken();
+        if (!registraUsuario([$usuario, $pass_hash, $token, $id], $con)) {
+            $errors [] = "Error al registrar el usuario";
+        }
+    } else {
+        $errors [] = "Error al registrar el usuario";
+    }
+
+    if (count($erros) == 0) {
+        
+    }else{
+        print_r($errors);
+    }
+
+}
 
 #session_destroy();
 #print_r($_SESSION);
