@@ -19,27 +19,27 @@ try {
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
-    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';                 //Set the SMTP server to send through
-
-    $phpmailer->SMTPSecure = 'ssl';
-    $phpmailer->Host = "smtp.castel.com"; // GMail
+    $phpmailer->Host = "smtp.ionos.mx"; // GMail
+    $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
+    $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
+    $mail->Password   = 'script_test';                               //SMTP password
+    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
     $phpmailer->Port = 465;
 
 
+    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';                 //Set the SMTP server to send through
 
-    $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
     #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
     #$mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-    $mail->Username   = 'pruebaphpmailer2005@gmail.com';                     //SMTP username
-    $mail->Password   = 'weakPassword';                               //SMTP password
 
     //Recipients
-    $mail->setFrom('pruebaphpmailer2005@gmail.com', 'PHP Mailer');
+    $mail->setFrom('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
     $mail->addAddress('dantecc10@gmail.com', 'Dante');     //Add a recipient
+    $mail->addAddress('jeremy.hdez9@gmail.com', 'Jeremías');     //Add a recipient
+    $mail->addReplyTo('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
+
     /*     $mail->addReplyTo('info@example.com', 'Information');
     $mail->setFrom('no-reply@prueba-pagos.castelancarpinteyro.club', 'Tienda online');
-    $mail->addAddress('jeremy.hdez9@gmail.com', 'User');     //Add a recipient
-    /*$mail->addReplyTo('info@example.com', 'Information');
     $mail->addCC('cc@example.com');
     $mail->addBCC('bcc@example.com'); */
 
@@ -52,16 +52,15 @@ try {
     $mail->Subject = 'Detalles de compra';
 
     $cuerpo = '<h4>Gracias por su compra</h4>';
-    $cuerpo .= '<p>El ID de su compra es <b>' . $id_transacción . '</b></p>';
+    $cuerpo .= ('<p>El ID de su compra es <b>' . $id_transacción . '</b></p>');
 
     $mail->Body    = imap_utf8($cuerpo);
-    $mail->AltBody = 'Detalles de compra';
+    $mail->AltBody = 'Le enviamos los detalles de su compra.';
 
     //$mail->setLanguaje('../phpmailer/language/phpmailer.lang-es.php');
 
     $mail->send();
-    echo 'Message has been sent';
 } catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    echo "Error al enviar el correo electrónico de la compra: {$mail->ErrorInfo}";
     exit;
 }
