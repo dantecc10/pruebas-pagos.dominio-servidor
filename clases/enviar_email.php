@@ -20,7 +20,7 @@ try {
     #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';                 //Set the SMTP server to send through
 
     $phpmailer->SMTPSecure = 'ssl';
-    $phpmailer->Host = "smtp.gmail.com"; // GMail
+    $phpmailer->Host = "smtp.castel.com"; // GMail
     $phpmailer->Port = 465;
 
 
