@@ -15,7 +15,7 @@ use PHPMailer\PHPMailer\Exception;
 try {
     $mail = new PHPMailer(true);
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
     $mail->Host = "smtp.ionos.mx"; // GMail
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
