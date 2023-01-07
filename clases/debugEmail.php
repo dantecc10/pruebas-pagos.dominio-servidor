@@ -15,7 +15,8 @@ require '../phpmailer/src/Exception.php';
 try {
     $mail = new PHPMailer(true);
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  SMTP::DEBUG_OFF;                   //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
     $mail->Host = "smtp.ionos.mx"; // GMail
     $mail->SMTPAuth = true;                                                    //Enable SMTP authentication
@@ -30,11 +31,11 @@ try {
     #    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  //Enable implicit TLS encryption
     #$phpmailer->Port = 465;
 
-    #    //Recipients
-    #    $mail->setFrom('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
-    #    $mail->addAddress('dantecc10@gmail.com', 'Dante');     //Add a recipient
-    #    $mail->addAddress('jeremy.hdez9@gmail.com', 'Jeremías');     //Add a recipient
-    #    $mail->addReplyTo('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
+    //Recipients
+    $mail->setFrom('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
+    $mail->addAddress('dantecc10@gmail.com', 'Dante');     //Add a recipient
+    $mail->addAddress('jeremy.hdez9@gmail.com', 'Jeremías');     //Add a recipient
+    $mail->addReplyTo('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
 
     #    /*     $mail->addReplyTo('info@example.com', 'Information');
     #    $mail->setFrom('no-reply@prueba-pagos.castelancarpinteyro.club', 'Tienda online');
@@ -45,20 +46,19 @@ try {
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); */    //Optional name
 
-    /*    
-    //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Detalles de compra';
-        $cuerpo = '<h4>Gracias por su compra</h4>';
-        $cuerpo .= ('<p>El ID de su compra es <b>exitosa</b></p>');
-        $mail->Body    = imap_utf8($cuerpo);
-        $mail->AltBody = 'Le enviamos los detalles de su compra.';
-    
-        $mail->setLanguage('es', '../phpmailer/language/phpmailer.lang-es.php');
-    */
 
-    #    $mail->send();
-}catch (Exception $e) {
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Detalles de compra';
+    $cuerpo = '<h4>Gracias por su compra</h4>';
+    $cuerpo .= ('<p>El ID de su compra es <b>exitosa</b></p>');
+    $mail->Body    = imap_utf8($cuerpo);
+    $mail->AltBody = 'Le enviamos los detalles de su compra.';
+
+    $mail->setLanguage('es', '../phpmailer/language/phpmailer.lang-es.php');
+
+    $mail->send();
+} catch (Exception $e) {
     echo "Error al enviar el correo electrónico de la compra: {$mail->ErrorInfo}";
     exit;
 }
