@@ -44,7 +44,11 @@ $preference->save();
 
         mp.checkout({
             preference: {
-                id: '<?php echo $preference->id ?>'
+                id: '<?php echo $preference->id; ?>'
+            },
+            render: {
+                container: '.ckecout-btn',
+                label: 'Pagar con MercadoPago'
             }
         })
     </script>
