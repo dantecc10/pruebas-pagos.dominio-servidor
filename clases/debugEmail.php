@@ -13,7 +13,7 @@ require '../phpmailer/src/SMTP.php';
 require '../phpmailer/src/Exception.php';
 
 //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer();
+$mail = new PHPMailer(true);
 
 try {
     //Server settings
@@ -23,8 +23,8 @@ try {
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
     $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
     $mail->Password   = 'script_test';                               //SMTP password
-    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
-    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //'ssl';
+    #$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
+    $phpmailer->SMTPSecure = 'ssl';
     $phpmailer->Port = 587;
 
     #    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';  //Set the SMTP server to send through
