@@ -57,7 +57,7 @@ try {
     $mail->Body    = imap_utf8($cuerpo);
     $mail->AltBody = 'Le enviamos los detalles de su compra.';
 
-    //$mail->setLanguaje('../phpmailer/language/phpmailer.lang-es.php');
+    $mail->setLanguage('es', '../phpmailer/language/phpmailer.lang-es.php');
 
     $mail->send();
 } catch (Exception $e) {
