@@ -25,7 +25,7 @@ try {
     $mail->Password   = 'script_test';                               //SMTP password
     #$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
     $phpmailer->SMTPSecure = 'ssl';
-    $phpmailer->Port = 587;
+    $phpmailer->Port = 465;
 
     #    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';  //Set the SMTP server to send through
     #    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  //Enable implicit TLS encryption
