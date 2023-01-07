@@ -11,9 +11,9 @@ use PHPMailer\PHPMailer\Exception;
 #require '../phpmailer/src/Exception.php';
 
 //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
 
 try {
+    $mail = new PHPMailer(true);
     //Server settings
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
@@ -58,7 +58,7 @@ try {
     */
 
     #    $mail->send();
-} catch (Exception $e) {
+}catch (Exception $e) {
     echo "Error al enviar el correo electrónico de la compra: {$mail->ErrorInfo}";
     exit;
 }
