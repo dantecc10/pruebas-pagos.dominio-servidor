@@ -6,7 +6,7 @@
 
 use PHPMailer\PHPMailer\{PHPMailer, SMTP, Exception};
 
-require '../vendor/autoload.php';
+#require '../vendor/autoload.php';
 
 require '../phpmailer/src/PHPMailer.php';
 require '../phpmailer/src/SMTP.php';
