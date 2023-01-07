@@ -16,15 +16,15 @@ require '../phpmailer/src/Exception.php';
 $mail = new PHPMailer(true);
 
 try {
-    #    //Server settings
-    #    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
-    #    $mail->isSMTP();                                                             //Send using SMTP
-    #    $phpmailer->Host = "smtp.ionos.mx"; // GMail
-    #    $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
-    #    $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
-    #    $mail->Password   = 'script_test';                               //SMTP password
-    #    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
-    #    $phpmailer->Port = 465;
+    //Server settings
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
+    $mail->isSMTP();                                                             //Send using SMTP
+    $phpmailer->Host = "smtp.ionos.mx"; // GMail
+    $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
+    $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
+    $mail->Password   = 'script_test';                               //SMTP password
+    $phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
+    $phpmailer->Port = 465;
     #
     #
     #    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';                 //Set the SMTP server to send through
