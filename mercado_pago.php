@@ -47,7 +47,7 @@ $preference->save();
                 id: '<?php echo $preference->id; ?>'
             },
             render: {
-                container: '.ckecout-btn',
+                container: '.checkout-btn',
                 label: 'Pagar con MercadoPago'
             }
         })
