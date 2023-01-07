@@ -2,7 +2,11 @@
 
 require "vendor/autoload.php";
 
-MercadoPago\SDK::setAccesToken();
+//require "sdk-php";
+
+MercadoPago\SDK::setAccesToken('');
+
+$preference = new MercadoPago\Preference;
 ?>
 <!DOCTYPE html>
 <html lang="en">
