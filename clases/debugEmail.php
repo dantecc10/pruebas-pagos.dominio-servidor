@@ -17,7 +17,7 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
+    #$mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
     $phpmailer->Host = "smtp.ionos.mx"; // GMail
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
