@@ -13,11 +13,11 @@ require '../phpmailer/src/SMTP.php';
 require '../phpmailer/src/Exception.php';
 
 //Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+$mail = new PHPMailer();
 
 try {
     //Server settings
-    #$mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;  //SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
     $phpmailer->Host = "smtp.ionos.mx"; // GMail
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
