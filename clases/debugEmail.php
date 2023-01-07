@@ -23,9 +23,9 @@ try {
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
     $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
     $mail->Password   = 'script_test';                               //SMTP password
-    #$phpmailer->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
-    $phpmailer->SMTPSecure = 'ssl';
-    $mail->Port = 465;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     #    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';  //Set the SMTP server to send through
     #    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  //Enable implicit TLS encryption
