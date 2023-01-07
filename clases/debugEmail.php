@@ -23,9 +23,10 @@ try {
     $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
     $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
     $mail->Password   = 'script_test';                               //SMTP password
-    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
+    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 465;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     #    #$mail->Host       = 'prueba-pagos.castelancarpinteyro.club';  //Set the SMTP server to send through
     #    #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;  //Enable implicit TLS encryption
@@ -46,21 +47,17 @@ try {
     $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); */    //Optional name
 
-
     /*    
     //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Detalles de compra';
-    
         $cuerpo = '<h4>Gracias por su compra</h4>';
         $cuerpo .= ('<p>El ID de su compra es <b>exitosa</b></p>');
-    
         $mail->Body    = imap_utf8($cuerpo);
         $mail->AltBody = 'Le enviamos los detalles de su compra.';
     
         $mail->setLanguage('es', '../phpmailer/language/phpmailer.lang-es.php');
     */
-
 
     #    $mail->send();
 } catch (Exception $e) {
