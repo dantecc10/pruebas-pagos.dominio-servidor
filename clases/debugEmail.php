@@ -18,9 +18,9 @@ try {
     $mail->SMTPDebug = SMTP::DEBUG_SERVER;  SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
     $mail->Host = "smtp.ionos.mx"; // GMail
-    $mail->SMTPAuth   = true;                                                    //Enable SMTP authentication
-    $mail->Username   = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
-    $mail->Password   = 'script_test';                               //SMTP password
+    $mail->SMTPAuth = true;                                                    //Enable SMTP authentication
+    $mail->Username = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
+    $mail->Password = 'script_test';                               //SMTP password
     #$mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; //'ssl';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     #$mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
