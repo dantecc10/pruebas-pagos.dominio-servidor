@@ -1,7 +1,5 @@
 <?php
 
-use MercadoPago\Preference;
-
 require "vendor/autoload.php";
 
 //require "sdk-php";
@@ -18,6 +16,14 @@ $item->unit_price = 150.00;
 $item->currency_id = "MXN";
 
 $preference->items = array($item);
+
+$preference->back_urls = array(
+    "success" => "https://prueba-pagos.castelancarpinteyro.club/captura.php",
+    "failure" => "https://prueba-pagos.castelancarpinteyro.club/fallo.php"
+);
+
+$preference->auto_return = "approved";
+$preference->binary_mode = "true";
 
 $preference->save();
 ?>
