@@ -23,7 +23,7 @@ $preference->back_urls = array(
 );
 
 $preference->auto_return = "approved";
-$preference->binary_mode = "true";
+$preference->binary_mode = true;
 
 $preference->save();
 ?>
