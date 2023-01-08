@@ -170,8 +170,6 @@ if ($productos != null) {
     ?>
 
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
-
     <script>
         //Paypal button
         paypal.Buttons({
@@ -212,9 +210,11 @@ if ($productos != null) {
                 console.log(data);
             }
         }).render('#paypal-button-container');
+    </script>
 
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
         //Mercado pago button
-
         const mp = new MercadoPago('', {
             locale: 'es-MX'
         });
