@@ -6,8 +6,8 @@ require 'vendor/autoload.php';
 
 /* MercadoPago\SDK::setAccessToken(TOKEN_MP);
 
-$preference = new MercadoPago\Preference(); */
-$productos_mp = array();
+$preference = new MercadoPago\Preference(); 
+$productos_mp = array();*/
 
 $db = new Database();
 $con = $db->conectar();
@@ -117,7 +117,7 @@ if ($productos != null) {
                                         $subtotal = $cantidad * $precio_desc;
                                         $total += $subtotal;
                                         #Variebles MP
-/*                                         $item = new MercadoPago\Item();
+                                        /*                                         $item = new MercadoPago\Item();
                                         $item->id = $_id;
                                         $item->title = $nombre;
                                         $item->quantity = $cantidad;
@@ -157,7 +157,7 @@ if ($productos != null) {
     </main>
 
     <?php
-    $preference->$items = $productos_mp;
+    /*     $preference->$items = $productos_mp;
     $preference->back_urls = array(
         "success" => "https://prueba-pagos.castelancarpinteyro.club/captura.php",
         "failure" => "https://prueba-pagos.castelancarpinteyro.club/fallo.php"
@@ -166,7 +166,7 @@ if ($productos != null) {
     $preference->auto_return = "approved";
     $preference->binary_mode = true;
 
-    $preference->save();
+    $preference->save(); */
     ?>
 
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
@@ -212,7 +212,7 @@ if ($productos != null) {
         }).render('#paypal-button-container');
     </script>
 
-    <script src="https://sdk.mercadopago.com/js/v2"></script>
+<!--     <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
         //Mercado pago button
         const mp = new MercadoPago('', {
@@ -228,7 +228,7 @@ if ($productos != null) {
                 label: 'Pagar con MercadoPago'
             }
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
