@@ -117,7 +117,7 @@ if ($productos != null) {
                                         $subtotal = $cantidad * $precio_desc;
                                         $total += $subtotal;
                                         #Variebles MP
-                                        /*                                         $item = new MercadoPago\Item();
+                                        /*$item = new MercadoPago\Item();
                                         $item->id = $_id;
                                         $item->title = $nombre;
                                         $item->quantity = $cantidad;
