@@ -164,7 +164,7 @@ if ($productos != null) {
     );
 
     $preference->auto_return = "approved";
-    $preference->binary_mode = true;
+    $preference->binary_mode = "true";
 
     $preference->save();
     ?>
