@@ -15,10 +15,10 @@ $preference->back_urls = array(
     "failure" => "https://prueba-pagos.castelancarpinteyro.club/fallo.php"
 );
 
-/* $preference->auto_return = "approved";
-$preference->binary_mode = true; */
+$preference->auto_return = "approved";
+$preference->binary_mode = true;
 
-$preference->save();
+//$preference->save();
 
 $db = new Database();
 $con = $db->conectar();
