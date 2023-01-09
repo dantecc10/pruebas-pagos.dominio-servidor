@@ -117,7 +117,7 @@ if ($productos != null) {
                                         $subtotal = $cantidad * $precio_desc;
                                         $total += $subtotal;
                                         #Variebles MP
-                                        /*$item = new MercadoPago\Item();
+                                        $item = new MercadoPago\Item();
                                         $item->id = $_id;
                                         $item->title = $nombre;
                                         $item->quantity = $cantidad;
@@ -125,7 +125,7 @@ if ($productos != null) {
                                         $item->currency_id = "MXN"; 
 
                                         array_push($productos_mp, $item);
-                                        unset($item);*/
+                                        unset($item);
                                 ?>
                                         <tr>
                                             <td><?php echo $nombre; ?></td>
