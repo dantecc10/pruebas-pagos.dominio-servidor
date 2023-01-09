@@ -156,8 +156,8 @@ if ($productos != null) {
         </div>
     </main>
 
-    <?php
-    $preference->$items = $productos_mp;
+<!--     <?php
+/*     $preference->$items = $productos_mp;
     $preference->back_urls = array(
         "success" => "https://prueba-pagos.castelancarpinteyro.club/captura.php",
         "failure" => "https://prueba-pagos.castelancarpinteyro.club/fallo.php"
@@ -166,8 +166,8 @@ if ($productos != null) {
     $preference->auto_return = "approved";
     $preference->binary_mode = true;
 
-    $preference->save();
-    ?>
+    $preference->save(); */
+    ?> -->
 
     <script src="https://www.paypal.com/sdk/js?client-id=<?php echo CLIENT_ID; ?>&currency=<?php echo CURRENCY; ?>"></script>
     <script>
