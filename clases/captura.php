@@ -43,7 +43,6 @@ if ($id > 0) {
             $sql_insert->execute([$id, $clave, $row_prod['nombre'], $precio_desc, $cantidad]);
         }
         include 'enviar_email.php';
-        unset($_SESSION['carrito']);
     }
     unset($_SESSION['carrito']);
     //header("Location: index.php");
