@@ -9,11 +9,11 @@ MercadoPago\SDK::setAccessToken(TOKEN_MP);
 $preference = new MercadoPago\Preference(); 
 $productos_mp = array();
 
-$preference->$items = $productos_mp;
-/* $preference->back_urls = array(
+/* $preference->$items = $productos_mp; */
+$preference->back_urls = array(
     "success" => "https://prueba-pagos.castelancarpinteyro.club/captura.php",
     "failure" => "https://prueba-pagos.castelancarpinteyro.club/fallo.php"
-); */
+);
 
 $preference->auto_return = "approved";
 $preference->binary_mode = true;
