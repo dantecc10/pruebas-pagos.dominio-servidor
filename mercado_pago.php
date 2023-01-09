@@ -59,5 +59,5 @@ $preference->save();
         })
     </script>
 </body>
-
+>
 </html>
