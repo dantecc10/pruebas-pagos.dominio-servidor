@@ -122,10 +122,10 @@ if ($productos != null) {
                                         $item->title = $nombre;
                                         $item->quantity = $cantidad;
                                         $item->unit_price = $precio_desc;
-                                        $item->currency_id = "MXN"; */
+                                        $item->currency_id = "MXN"; 
 
                                         array_push($productos_mp, $item);
-                                        unset($item);
+                                        unset($item);*/
                                 ?>
                                         <tr>
                                             <td><?php echo $nombre; ?></td>
