@@ -212,7 +212,7 @@ if ($productos != null) {
         }).render('#paypal-button-container');
     </script>
 
-<!--     <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script>
         //Mercado pago button
         const mp = new MercadoPago('', {
@@ -228,7 +228,7 @@ if ($productos != null) {
                 label: 'Pagar con MercadoPago'
             }
         })
-    </script> -->
+    </script>
 </body>
 
 </html>
