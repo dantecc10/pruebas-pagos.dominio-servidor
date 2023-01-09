@@ -4,9 +4,9 @@ require 'config/config.php';
 require 'config/database.php';
 require 'vendor/autoload.php';
 
-MercadoPago\SDK::setAccessToken(TOKEN_MP);
+/* MercadoPago\SDK::setAccessToken(TOKEN_MP);
 
-$preference = new MercadoPago\Preference();
+$preference = new MercadoPago\Preference(); */
 $productos_mp = array();
 
 $db = new Database();
@@ -117,12 +117,12 @@ if ($productos != null) {
                                         $subtotal = $cantidad * $precio_desc;
                                         $total += $subtotal;
                                         #Variebles MP
-                                        $item = new MercadoPago\Item();
+/*                                         $item = new MercadoPago\Item();
                                         $item->id = $_id;
                                         $item->title = $nombre;
                                         $item->quantity = $cantidad;
                                         $item->unit_price = $precio_desc;
-                                        $item->currency_id = "MXN";
+                                        $item->currency_id = "MXN"; */
 
                                         array_push($productos_mp, $item);
                                         unset($item);
