@@ -4,10 +4,10 @@ require 'config/config.php';
 require 'config/database.php';
 require 'vendor/autoload.php';
 
-/* MercadoPago\SDK::setAccessToken(TOKEN_MP);
+MercadoPago\SDK::setAccessToken(TOKEN_MP);
 
 $preference = new MercadoPago\Preference(); 
-$productos_mp = array();*/
+$productos_mp = array();
 
 $db = new Database();
 $con = $db->conectar();
