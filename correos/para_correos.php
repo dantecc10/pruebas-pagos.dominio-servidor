@@ -1,5 +1,5 @@
 <?php
-
+include "configuracion";
 $mail->ClearAllRecipients();
 
 $mail->AddAddress("dante@castelancarpinteyro.com");#("destinatario@email.com");
