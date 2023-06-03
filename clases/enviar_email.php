@@ -15,15 +15,19 @@ try {
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
     //Server settings
-    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
-    SMTP::DEBUG_OFF;                   //Enable verbose debug output
+    //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    //SMTP::DEBUG_OFF;                   //Enable verbose debug output
     $mail->isSMTP();                                                             //Send using SMTP
-    $mail->Host = "smtp.ionos.mx"; // GMail
+    $mail->Host = "prueba-pagos.castelancarpinteyro.club"; // GMail
+    $mail->SMTPSecure = 'TLS';
+    $mail->Port = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
     $mail->SMTPAuth = true;                                                    //Enable SMTP authentication
     $mail->Username = 'script_test@prueba-pagos.castelancarpinteyro.club';                     //SMTP username
     $mail->Password = 'scriptus_test';                               //SMTP password
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-    $mail->Port = 587;  //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->From = "script_test@prueba_pagos.castelancarpinteyro.club";
+    $mail->FromName = "Prueba Pagos";
+    $mail->CharSet = "UTF-8";
+
 
     //Recipients
     $mail->setFrom('script_test@prueba-pagos.castelancarpinteyro.club', 'Tienda');
